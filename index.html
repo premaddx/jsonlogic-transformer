@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <div>JSON</div>
+    <div id="json"></div>
+    <div>JsonLogic</div>
+    <div id="jsonlogic"></div>
+  </head>
+  <body>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module">
+      import { transformToJSON, transformToJSONLogic } from '/src/main.ts';
+
+      const expression = {
+        and: [
+          {
+            '>': [
+              {
+                var: 'firstName',
+              },
+              'Stev',
+            ],
+          },
+          {
+            '!': {
+              in: [
+                {
+                  var: 'age',
+                },
+                ['12'],
+              ],
+            },
+          },
+          {
+            or: [
+              {
+                '==': [
+                  {
+                    var: 'age',
+                  },
+                  '25',
+                ],
+              },
+            ],
+          },
+        ],
+      };
+
+      const jsonCode = document.querySelector('#json');
+      jsonCode.innerHTML = `<code>${transformToJSON(expression)}</code>`;
+
+      const rules = {
+        combinator: 'and',
+        not: false,
+        rules: [
+          {
+            field: 'firstName',
+            value: 'Stev, Bob',
+            operator: 'notBetween',
+          },
+          {
+            field: 'age',
+            operator: 'notNull',
+            valueSource: 'value',
+            value: '12',
+          },
+          {
+            rules: [
+              {
+                field: 'age',
+                operator: '>',
+                valueSource: 'value',
+                value: '25',
+              },
+              {
+                field: 'age',
+                operator: '<',
+                valueSource: 'value',
+                value: '18',
+              },
+              {
+                field: 'lastName',
+                operator: 'notBetween',
+                valueSource: 'value',
+                value: 'jnkl, nk',
+              },
+            ],
+            combinator: 'or',
+            not: false,
+          },
+        ],
+      };
+
+      const jsonLogicCode = document.querySelector('#jsonlogic');
+      jsonLogicCode.innerHTML = `<code>${JSON.stringify(transformToJSONLogic(rules))}</code>`;
+    </script>
+  </body>
+</html>
