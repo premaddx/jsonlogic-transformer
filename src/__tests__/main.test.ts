@@ -1,4 +1,4 @@
-import { transformToJSON, transformToJSONLogic } from './main';
+import { transformToJSON, transformToJSONLogic } from '../main';
 
 describe('index exports', () => {
   it('should export transformToJSON function', () => {

@@ -1,4 +1,4 @@
-import transformToJSON from './transformToJson';
+import transformToJSON from '../transformToJson';
 
 describe('transformToJSON', () => {
   const validExpression = {

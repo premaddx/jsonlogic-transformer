@@ -1,8 +1,8 @@
 import transformToJSONLogic, {
   prepareSqlStatement,
   prepareWhereClause,
-} from './transformToJsonlogic';
-import { Rule, Rules } from './types';
+} from '../transformToJsonlogic';
+import { Rule, Rules } from '../types';
 
 describe('transformToJSONLogic', () => {
   const validRules: Rules = {
