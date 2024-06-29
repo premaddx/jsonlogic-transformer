@@ -1,8 +1,9 @@
 {
   "name": "jsonlogic-transformer",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "author": "Prem Anand Topno",
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
@@ -46,6 +47,10 @@
   },
   "dependencies": {
     "react-querybuilder": "^7.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/premaddx/jsonlogic-transformer.git"
   },
   "config": {
     "commitizen": {
