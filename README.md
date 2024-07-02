@@ -2,7 +2,7 @@
 
 A simple package for transforming JsonLogic to JSON and vice-versa
 
-## Basic Usage
+## Installation
 
 ```
 npm i jsonlogic-transformer
