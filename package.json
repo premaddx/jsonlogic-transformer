@@ -1,9 +1,12 @@
 {
   "name": "jsonlogic-transformer",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
-  "main": "dist/jsonlogic-transformer.js",
+  "main": "dist/jsonlogic-transformer.cjs.js",
+  "module": "dist/jsonlogic-transformer.es.js",
+  "unpkg": "dist/jsonlogic-transformer.umd.js",
+  "jsdelivr": "dist/jsonlogic-transformer.umd.js",
   "license": "MIT",
   "keywords": [
     "jsonlogic"
