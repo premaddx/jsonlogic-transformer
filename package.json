@@ -1,8 +1,13 @@
 {
   "name": "jsonlogic-transformer",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "1.0.1",
   "type": "module",
+  "main": "dist/jsonlogic-transformer.js",
+  "license": "MIT",
+  "keywords": [
+    "jsonlogic"
+  ],
   "author": "Prem Anand Topno",
   "scripts": {
     "dev": "vite",
